@@ -1,0 +1,34 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE settings
+.vscode/
+.idea/
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# macOS trash files
+.Trash/
+
+# Backup files
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Compiled or temporary files
+*.o
+*.out
+*.exe
+*.class
+*.pyc
