@@ -1,23 +1,15 @@
 "use strict";
 // Create a new directory.
-// Create a new file within the directory and write some text to it.
-// Copy the file to a different location.
-// Rename the original file.
 // Delete the directory and its contents.
 
-// Syntax:
-// fs.mkdir() method
-// fs.writeFile() and fs.writeFileSync() to write data to file
-// fs.copyFile() copies files from one path to another
-// fs.rename()
-// fs.rmdir
-
-// Taking arguments to use commands in terminal
-const argv = require("process");
 // Need this to work with file system
 const fs = require("fs");
 // Need this to work with path module
 const path = require("path");
+
+// Calling functions
+makeDirectory();
+deleteDirectory();
 
 // Make directory
 async function makeDirectory() {
@@ -30,4 +22,13 @@ async function makeDirectory() {
 	}
 }
 
-makeDirectory();
+async function deleteDirectory() {
+	try {
+		const folderName = path.join(__dirname, "testing");
+
+		await fs.rm(folderName, { recursive: true, force: true });
+		console.log(`Deleted folder: ${folderName}`);
+	} catch (error) {
+		console.error("Error during deletion:", error);
+	}
+}
